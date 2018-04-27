@@ -1,5 +1,47 @@
 <html>
 <body>
-<iframe src="http://www.watching-grass-grow.com" height="2000" width="2000" > </iframe>
-  </body>
+
+<div class='wrapper'>
+<form id='nameForm'>
+<div class='form-uname'>
+    <lable id='nameLable' for='nameField'>Enter desired website URL:</lable>
+    <input id='nameField' type='text' maxlength='250'></input>
+</div>
+<div class='form-sub'>
+    <button id='subButton' type='button'>Go through the rabbit hole</button>
+</div>
+</form>
+<button id='bing' type'button'> Go to bing</button>
+<div>
+    <p id='result'></p>
+
+</div>
+</div>
+
+
+
+
+</body>
+<script>
+
+    function gotobing(){
+result.innerHTML='<iframe src="https://www.bing.com" height="2000" width="2000"> </iframe>'
+
+
+
+    }
+function getUserName() {
+var nameField = document.getElementById('nameField').value;
+var result = document.getElementById('result');
+result.innerHTML='<iframe src='+nameField+' height="2000" width="2000"> </iframe>'
+
+}
+var subButton = document.getElementById('subButton');
+subButton.addEventListener('click', getUserName, false);
+
+
+document.getElementById('bing').addEventListener('click', gotobing, false);
+
+</script>
 </html>
+
