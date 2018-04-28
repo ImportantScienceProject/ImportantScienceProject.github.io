@@ -3,7 +3,7 @@
 
 
 <style> body {
-    background-image: url("https://wallpapercave.com/wp/wp1895635.jpg");
+    background-image: url("https://i.redd.it/1iwcit1gidyy.jpg");
     background-size: cover;
     opacity:0.9;
 }
@@ -13,6 +13,11 @@ border:none;
 margin-top: 25px;
 }
 #bing{color: lightskyblue;
+background-color: darkblue;
+border:   15px   lightskyblue;
+margin-top:25px;
+}
+#close{color: lightskyblue;
 background-color: darkblue;
 border:   15px   lightskyblue;
 margin-top:25px;
@@ -38,7 +43,9 @@ margin-top:25px;
     <button id='subButton' type='button'>Go through the rabbit hole</button>
 </div>
 </form>
+
 <button id='bing' type'button'> Go to bing</button>
+<button id="close" type="button"> Close Window</button>
 <div>
     <p id='result'></p>
 
@@ -53,10 +60,15 @@ margin-top:25px;
 
     function gotobing(){
 result.innerHTML='<iframe src="https://www.bing.com" height="2000" width="2000"> </iframe>'
+    }
+
+    function close(){
+result.innerHTML=''
 
 
 
     }
+
 function getUserName() {
 var nameField = document.getElementById('nameField').value;
 var result = document.getElementById('result');
@@ -68,6 +80,7 @@ subButton.addEventListener('click', getUserName, false);
 
 
 document.getElementById('bing').addEventListener('click', gotobing, false);
+document.getElementById('close').addEventListener('click', close, false);
 
 </script>
 </html>
