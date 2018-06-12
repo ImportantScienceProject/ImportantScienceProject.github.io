@@ -1,7 +1,86 @@
-<html>
+
+
+
+<style> body {
+    background-image: url("http://img.izismile.com/img/img2/20091015/dog_gas_masks_01.jpg");
+    background-size: auto;
+    opacity:0.9;
+}
+#subButton{color: lightskyblue;
+background-color:darkblue;
+border:none;
+margin-top: 25px;
+}
+#bing{color: lightskyblue;
+background-color: darkblue;
+border:   15px   lightskyblue;
+margin-top:25px;
+}
+#close{color: lightskyblue;
+background-color: darkblue;
+border:   15px   lightskyblue;
+margin-top:25px;
+}
+#nameLable{color:lightskyblue}
+#nameField{
+    text-align: center;
+    background:none;
+    color:lightblue;
+    border:10px rebeccapurple;
+}
+
+</style>
 <body>
 
-<iframe width="1400" height="788" src="https://www.youtube.com/embed/SSDuQXqAOrA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </body>
+<div class='wrapper'>
+<form id='nameForm'>
+<div class='form-uname'>
+    <lable id='nameLable' for='nameField'>Enter desired website URL:</lable>
+    <input id='nameField' type='text' maxlength='250'></input>
+</div>
+<div class='form-sub'>
+    <button id='subButton' type='button'>Go</button>
+</div>
+</form>
+
+<button id='bing' type'button'> Go to bing</button>
+<button id="close" type="button"> Close Window</button>
+<div>
+    <p id='result'></p>
+
+</div>
+</div>
+
+
+
+
+</body>
+<script>
+
+    function gotobing(){
+result.innerHTML='<iframe src="https://www.bing.com" height="2000" width="2000"> </iframe>'
+    }
+
+    function close(){
+result.innerHTML=''
+
+
+
+    }
+
+function getUserName() {
+var nameField = document.getElementById('nameField').value;
+var result = document.getElementById('result');
+result.innerHTML='<iframe src='+nameField+' height="2000" width="2000"> </iframe>'
+
+}
+var subButton = document.getElementById('subButton');
+subButton.addEventListener('click', getUserName, false);
+
+
+document.getElementById('bing').addEventListener('click', gotobing, false);
+document.getElementById('close').addEventListener('click', close, false);
+
+</script>
 </html>
 
